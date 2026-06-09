@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anton Gabriel Clores — Web Content Specialist & QA Engineer</title>
+  <meta name="description" content="Personal profile of Anton Gabriel Clores, a Web Content Specialist and QA Engineer with 5+ years of experience in AEM, WordPress, and end-to-end quality assurance." />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Anton Gabriel Clores — Web Content & QA" />
+  <meta property="og:description" content="5+ years bridging digital content strategy and software quality assurance." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal-50: #e6f4f1;
+      --teal-100: #b3ddd6;
+      --teal-400: #2a9d8f;
+      --teal-600: #1b7a6e;
+      --teal-800: #0f4f47;
+      --slate-50: #f6f7f9;
+      --slate-100: #eaecf0;
+      --slate-200: #d3d7de;
+      --slate-400: #8b919e;
+      --slate-600: #505766;
+      --slate-800: #1e2433;
+      --white: #ffffff;
+      --text-primary: var(--slate-800);
+      --text-secondary: var(--slate-600);
+      --text-muted: var(--slate-400);
+      --border: var(--slate-200);
+      --bg-page: var(--slate-50);
+      --bg-card: var(--white);
+      --accent: var(--teal-400);
+      --accent-light: var(--teal-50);
+      --accent-border: var(--teal-100);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background: var(--bg-page);
+      color: var(--text-primary);
+      font-size: 15px;
+      line-height: 1.65;
+      min-height: 100vh;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(246,247,249,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-brand {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+      text-decoration: none;
+    }
+
+    .nav-brand span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 6px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: 6px;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .nav-links a:hover {
+      background: var(--slate-100);
+      color: var(--text-primary);
+    }
+
+    /* LAYOUT */
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+      position: sticky;
+      top: 72px;
+    }
+
+    .profile-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 24px;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--teal-400), var(--teal-600));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      font-weight: 600;
+      color: white;
+      margin: 0 auto 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .profile-name {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+      letter-spacing: -0.02em;
+    }
+
+    .profile-title {
+      font-size: 12px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .profile-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0 0 16px;
+    }
+
+    .contact-list {
+      list-style: none;
+      text-align: left;
+    }
+
+    .contact-list li {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 12px;
+      color: var(--text-secondary);
+      padding: 5px 0;
+    }
+
+    .contact-list a {
+      color: var(--accent);
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    .contact-list a:hover { text-decoration: underline; }
+
+    .contact-icon {
+      width: 28px;
+      height: 28px;
+      background: var(--accent-light);
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-icon svg {
+      width: 14px;
+      height: 14px;
+      stroke: var(--teal-600);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .sidebar-section {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px 20px;
+      margin-bottom: 16px;
+    }
+
+    .sidebar-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    /* SKILLS */
+    .skill-group { margin-bottom: 14px; }
+    .skill-group:last-child { margin-bottom: 0; }
+
+    .skill-group-name {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      margin-bottom: 6px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .skill-tag {
+      font-size: 11px;
+      padding: 3px 9px;
+      border-radius: 20px;
+      background: var(--slate-100);
+      color: var(--slate-600);
+      border: 1px solid var(--border);
+    }
+
+    .skill-tag.accent {
+      background: var(--accent-light);
+      color: var(--teal-600);
+      border-color: var(--accent-border);
+      font-weight: 500;
+    }
+
+    /* CERTIFICATIONS */
+    .cert-list { list-style: none; }
+    .cert-list li {
+      font-size: 12px;
+      color: var(--text-secondary);
+      padding: 4px 0;
+      border-bottom: 1px solid var(--slate-100);
+      display: flex;
+      align-items: flex-start;
+      gap: 7px;
+    }
+    .cert-list li:last-child { border-bottom: none; }
+    .cert-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-top: 6px;
+      flex-shrink: 0;
+    }
+
+    /* MAIN CONTENT */
+    .main { min-width: 0; }
+
+    /* SECTION */
+    .section { margin-bottom: 40px; }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .section-line {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* HERO / ABOUT */
+    .about-block {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-block::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--teal-400), var(--teal-100));
+    }
+
+    .about-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--accent);
+      margin-bottom: 8px;
+      letter-spacing: 0.03em;
+    }
+
+    .about-headline {
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--text-primary);
+      letter-spacing: -0.03em;
+      line-height: 1.25;
+      margin-bottom: 14px;
+    }
+
+    .about-headline em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .about-body {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-family: 'DM Mono', monospace;
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--accent);
+      display: block;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* EXPERIENCE */
+    .exp-item {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 28px;
+    }
+
+    .exp-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 6px;
+      bottom: -28px;
+      width: 1px;
+      background: var(--border);
+    }
+
+    .exp-item:last-child::before { display: none; }
+
+    .exp-item::after {
+      content: '';
+      position: absolute;
+      left: -4px;
+      top: 6px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid var(--bg-page);
+    }
+
+    .exp-item.current::after {
+      background: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-light);
+    }
+
+    .exp-meta {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 4px;
+      flex-wrap: wrap;
+    }
+
+    .exp-role {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .exp-date {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+      white-space: nowrap;
+      padding-top: 2px;
+    }
+
+    .exp-company {
+      font-size: 12px;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .exp-badge {
+      display: inline-block;
+      font-size: 10px;
+      padding: 2px 7px;
+      border-radius: 20px;
+      margin-left: 6px;
+      background: var(--accent-light);
+      color: var(--teal-600);
+      border: 1px solid var(--accent-border);
+      vertical-align: middle;
+      font-weight: 500;
+    }
+
+    .exp-bullets {
+      list-style: none;
+    }
+
+    .exp-bullets li {
+      font-size: 13px;
+      color: var(--text-secondary);
+      padding: 3px 0 3px 14px;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .exp-bullets li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--text-muted);
+    }
+
+    /* EDUCATION */
+    .edu-block {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 20px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .edu-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--accent-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .edu-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--teal-600);
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .edu-degree {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 2px;
+    }
+
+    .edu-school {
+      font-size: 12px;
+      color: var(--accent);
+      margin-bottom: 2px;
+    }
+
+    .edu-year {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 680px) {
+      .page {
+        grid-template-columns: 1fr;
+        padding: 24px 16px 60px;
+        gap: 24px;
+      }
+      .sidebar { position: static; }
+      .nav-links { display: none; }
+      .about-stats { grid-template-columns: repeat(3, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-brand">Anton<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="profile-card">
+        <div class="avatar">AG</div>
+        <p class="profile-name">Anton Gabriel Clores</p>
+        <p class="profile-title">Web Content Specialist<br>QA Engineer</p>
+        <hr class="profile-divider" />
+        <ul class="contact-list">
+          <li>
+            <span class="contact-icon">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </span>
+            <a href="mailto:antonclores@gmail.com">antonclores@gmail.com</a>
+          </li>
+          <li>
+            <span class="contact-icon">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44 2 2 0 0 1 3.59 1.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </span>
+            +63 905 881 2346
+          </li>
+          <li>
+            <span class="contact-icon">
+              <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </span>
+            <a href="https://linkedin.com/in/anton-clores/" target="_blank" rel="noopener">linkedin.com/in/anton-clores</a>
+          </li>
+          <li>
+            <span class="contact-icon">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            Sta. Ana, Manila, PH
+          </li>
+        </ul>
+      </div>
+
+      <!-- SKILLS -->
+      <div class="sidebar-section">
+        <p class="sidebar-label">Skills</p>
+        <div class="skill-group">
+          <p class="skill-group-name">Content & CMS</p>
+          <div class="skill-tags">
+            <span class="skill-tag accent">Adobe AEM</span>
+            <span class="skill-tag accent">WordPress</span>
+            <span class="skill-tag">SEO</span>
+            <span class="skill-tag">Web Marketing</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <p class="skill-group-name">Quality Assurance</p>
+          <div class="skill-tags">
+            <span class="skill-tag accent">Manual Testing</span>
+            <span class="skill-tag accent">Regression QA</span>
+            <span class="skill-tag">Performance QA</span>
+            <span class="skill-tag">SIT</span>
+            <span class="skill-tag">Defect Tracking</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <p class="skill-group-name">Development & Design</p>
+          <div class="skill-tags">
+            <span class="skill-tag">HTML/CSS</span>
+            <span class="skill-tag">Front-End Dev</span>
+            <span class="skill-tag">Graphic Design</span>
+            <span class="skill-tag">Figma</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <p class="skill-group-name">Tools & Platforms</p>
+          <div class="skill-tags">
+            <span class="skill-tag">Selenium</span>
+            <span class="skill-tag">SQL Server</span>
+            <span class="skill-tag">Deeptrawl</span>
+            <span class="skill-tag">PuTTY</span>
+            <span class="skill-tag">ALM</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CERTIFICATIONS -->
+      <div class="sidebar-section">
+        <p class="sidebar-label">Certifications</p>
+        <ul class="cert-list">
+          <li><span class="cert-dot"></span>Visual Graphic Design NC III</li>
+          <li><span class="cert-dot"></span>Web Development Level III</li>
+          <li><span class="cert-dot"></span>Creative Web Design Level III</li>
+          <li><span class="cert-dot"></span>Adobe Target: Personalize & Optimize</li>
+          <li><span class="cert-dot"></span>Selenium Automation — Accenture</li>
+          <li><span class="cert-dot"></span>SDLC, UFT & ALM — Accenture</li>
+          <li><span class="cert-dot"></span>Android App Dev Seminar — STI</li>
+        </ul>
+      </div>
+
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+      <!-- ABOUT -->
+      <section class="section" id="about">
+        <div class="section-header">
+          <span class="section-title">About</span>
+          <div class="section-line"></div>
+        </div>
+        <div class="about-block">
+          <p class="about-eyebrow">// web content · quality assurance · front-end</p>
+          <h1 class="about-headline">Building web experiences that are <em>accurate</em>, accessible, and built to last.</h1>
+          <p class="about-body">
+            I'm a Web Content Specialist and QA Engineer with 5+ years of experience at the intersection of digital content production and software quality. Currently at Trend Micro, I manage global web properties using Adobe Experience Manager and WordPress, while running pre-launch QA reviews that keep pages on-standard before they reach the public.
+          </p>
+          <p class="about-body" style="margin-top:10px;">
+            I've collaborated with stakeholders across the Philippines, Europe, and the US — which means I'm used to clear communication, tight deadlines, and adapting content to regional needs without losing brand consistency.
+          </p>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-number">5+</span>
+              <span class="stat-label">Years experience</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">4</span>
+              <span class="stat-label">Companies</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">3</span>
+              <span class="stat-label">Continents reached</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section class="section" id="experience">
+        <div class="section-header">
+          <span class="section-title">Experience</span>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="exp-item current">
+          <div class="exp-meta">
+            <span class="exp-role">QA & Web Content Specialist <span class="exp-badge">Current</span></span>
+            <span class="exp-date">Nov 2024 – Present</span>
+          </div>
+          <p class="exp-company">Trend Micro</p>
+          <ul class="exp-bullets">
+            <li>Manage and publish content across multiple global web properties using AEM and WordPress, ensuring brand consistency across regions.</li>
+            <li>Develop and execute web marketing strategies that drive organic traffic growth and improve engagement metrics.</li>
+            <li>Conduct pre-launch QA reviews, verifying adherence to style guides and UX standards before public release.</li>
+            <li>Collaborate with cross-functional stakeholders in the Philippines, Europe, and the US to align content with regional campaign goals.</li>
+            <li>Perform SEO tasks including metadata optimization, internal linking, and content audits.</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-meta">
+            <span class="exp-role">QA & Web Production Specialist</span>
+            <span class="exp-date">Jan 2021 – Nov 2024</span>
+          </div>
+          <p class="exp-company">Trend Micro / Viventis</p>
+          <ul class="exp-bullets">
+            <li>Designed and produced high-fidelity web pages in AEM using established style guides and pre-built asset libraries.</li>
+            <li>Executed end-to-end QA reviews of websites and digital deliverables, reducing post-release defects.</li>
+            <li>Deployed Deeptrawl for automated accessibility and quality scans across web properties.</li>
+            <li>Implemented SEO best practices — internal linking, metadata curation, and content structuring.</li>
+            <li>Coordinated production workflows with international colleagues across Europe and the US.</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-meta">
+            <span class="exp-role">Quality Assurance Engineer</span>
+            <span class="exp-date">Aug 2020 – Jan 2021</span>
+          </div>
+          <p class="exp-company">Bancnet / Primover Consultancy</p>
+          <ul class="exp-bullets">
+            <li>Designed, developed, and tested IT systems for banking operations, ensuring solutions met regulatory requirements.</li>
+            <li>Established SDLC quality policies to maximize software efficiency and minimize defect escape rates.</li>
+            <li>Monitored and validated banking transactions using PuTTY; facilitated client-facing SIT sessions.</li>
+            <li>Executed comprehensive test plans covering functional, regression, and performance scenarios.</li>
+            <li>Performed database validation using Microsoft SQL Server to confirm test result accuracy.</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-meta">
+            <span class="exp-role">Software Quality Assurance Engineer</span>
+            <span class="exp-date">Aug 2019 – Aug 2020</span>
+          </div>
+          <p class="exp-company">Accenture / AAISI</p>
+          <ul class="exp-bullets">
+            <li>Designed and executed structured test plans for enterprise applications across functional, regression, and SIT scenarios.</li>
+            <li>Verified cross-platform compatibility between PC and mobile environments.</li>
+            <li>Managed test case definition and results tracking using Microsoft Test Manager.</li>
+            <li>Completed Accenture training programs in Selenium, ALM, SDLC frameworks, and UFT scripting.</li>
+          </ul>
+        </div>
+
+      </section>
+
+      <!-- EDUCATION -->
+      <section class="section" id="education">
+        <div class="section-header">
+          <span class="section-title">Education</span>
+          <div class="section-line"></div>
+        </div>
+        <div class="edu-block">
+          <div class="edu-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          </div>
+          <div>
+            <p class="edu-degree">Bachelor of Science in Information Technology</p>
+            <p class="edu-school">STI College Pasay EDSA</p>
+            <p class="edu-year">2015 – 2019</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <footer id="contact">
+    <p>© 2026 Anton Gabriel Clores &nbsp;·&nbsp; <a href="mailto:antonclores@gmail.com">antonclores@gmail.com</a> &nbsp;·&nbsp; <a href="https://linkedin.com/in/anton-clores/" target="_blank" rel="noopener">LinkedIn</a></p>
+  </footer>
+
+</body>
+</html>
